@@ -35,7 +35,17 @@ struct subject computerscience[10];
 int main()
 {
 	FILE *fp;
-	char filename[20], tmp_store[100];
-	fopen
+	char filename[20] = { "xml" } , tmp_store[100];
+	char tmp;
+	if ((fopen(filename, "r")) == NULL)
+	{
+		printf("Open file error\n");
+		return 0;
+	}
+	while ((tmp = fgetc(fp)) != EOF)
+	{
+		printf("%c", tmp);
+	}
+		fclose(fp);
 	return 0;
 }
