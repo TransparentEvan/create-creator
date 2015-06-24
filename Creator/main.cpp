@@ -1,8 +1,10 @@
 #include<stdio.h>
+#include "string.h"
+//内容均已字符串形式存储
 struct chapter
 {
 	char _chaptername[100];
-	char question[10][100];	//第一维为问题编号，第二维为问题内容
+	char _question[10][100];	//第一维为问题编号，第二维为问题内容
 	char _answer[10][100];//与问题对应 
 };
 struct subject
@@ -12,10 +14,12 @@ struct subject
 };
 struct homework
 {
+	int num;//表示第几次作业
 	subject project[3];
 };
 
-struct subject computerscience[10];
+struct homework computerscience;
+void print_question(FILE *f, )
 
 /*<subject1 name = "math">
 	<chapter1>
@@ -31,20 +35,18 @@ struct subject computerscience[10];
 		<answer> 都是合法的 </answer>
 	</chapter1>
 </subject2>*/
-	
 int main()
 {
 	FILE *fp;
-	char filename[20] = { "xml" } , tmp_store[100];
-	char tmp;
-	if ((fopen(filename, "r")) == NULL)
+	int PROJECT = 0, SECTION = 0, QA = 0;
+	if ((fp=fopen("homework.xml", "w"))== NULL)
 	{
-		printf("Open file error\n");
+		printf("Open xml error\n");
 		return 0;
 	}
-	while ((tmp = fgetc(fp)) != EOF)
+	while (PROJECT<3 && SECTION<10 && QA<10)
 	{
-		printf("%c", tmp);
+		
 	}
 		fclose(fp);
 	return 0;
