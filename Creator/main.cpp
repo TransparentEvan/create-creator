@@ -25,20 +25,23 @@ void head(FILE*f,char s[100], int *a)
 	fprintf(f, "<");
 	fputs(s, f);
     fprintf(f, "num=%d", *a);
-	fprintf(f, "  >");
+	fprintf(f, "  >\n");
+	fprintf(f, "  ");
 }
 void end(FILE*f, char s[100])
 {
 	fprintf(f, "</");
 	fputs(s, f);
-	fprintf(f, ">");
+	fprintf(f, ">\n");
 }
 void print_question(FILE*f, char s1[1000], char s2[1000], int *b)
 {
 	fprintf(f, "<question  ");
-	fprintf(f, "num=%d>", *b);
+	fprintf(f, "num=%d>\n", *b);
+	fprintf(f, "  ");
 	fputs(s1, f);
 	fprintf(f, "\n");
+	fprintf(f, "  ");
 	fputs(s2, f);
 }
 void print_chapter(FILE *f, struct chapter s, int *a,int *b)//a为第几章,b为第几个问题的计数器
@@ -60,7 +63,7 @@ void print_subject(FILE*f, struct subject s, int*a, int *b, int *c)
 }
 void print_homework(FILE*f, struct homework s, int*a, int*b, int *c)
 {
-	head(f, "homework", s.num);
+	head(f, "homework",);
 }
 /*<subject1 name = "math">
 	<chapter1>
