@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 //刚刚入手c# 写的乱七八糟
 //将原有的结构取消 改成了数组 用下标表示第几个粒子
 //从网上找了一个随机数的函数用来产生随机数，只是将int【】 全改成了double【】
-//缺少0到1 的随机数产生 以及遍历过程
 namespace figure_out_the_extremum_csharp
 {
     class Program
@@ -43,6 +42,7 @@ namespace figure_out_the_extremum_csharp
                         tmp = ra.Next(minValue,maxValue); //重新随机获取。
                         getNum(arrNum, tmp, minValue, maxValue, ra);//递归:如果取出来的数字和已取得的数字有重复就重新随机获取。
                     }
+                    n ++ ;
                }
               return tmp;
          }
@@ -94,12 +94,10 @@ namespace figure_out_the_extremum_csharp
 
          for (int j = 0; j < 5; j++)
             {
-                //Console.WriteLine(j);
                 for (i = 0; i < 30; i++)
                 {
                     update(i);
                     check(i);
-                  //  Console.WriteLine(i);
                 }
             }
             
